@@ -1,0 +1,288 @@
+<div style="margin: 0 0 1.5rem;">
+  <h2 style="font-size: 18px; font-weight: 500; margin: 0 0 0.5rem;">KPIs Cortag Europe 2025 - T1 2026</h2>
+  <p style="font-size: 14px; color: var(--color-text-secondary); margin: 0;">Evolución trimestral Instagram y Facebook</p>
+</div>
+
+<div style="display: flex; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap;">
+  <button onclick="showMetric('seguidores')" id="btnSeguidores" style="padding: 6px 14px; font-size: 13px; border-radius: var(--border-radius-md); background: var(--color-background-info); color: var(--color-text-info); border: 0.5px solid var(--color-border-info); cursor: pointer; font-weight: 500;">
+    Seguidores
+  </button>
+  <button onclick="showMetric('visualizaciones')" id="btnVisualizaciones" style="padding: 6px 14px; font-size: 13px; border-radius: var(--border-radius-md); background: transparent; border: 0.5px solid var(--color-border-secondary); cursor: pointer;">
+    Visualizaciones
+  </button>
+  <button onclick="showMetric('alcance')" id="btnAlcance" style="padding: 6px 14px; font-size: 13px; border-radius: var(--border-radius-md); background: transparent; border: 0.5px solid var(--color-border-secondary); cursor: pointer;">
+    Alcance
+  </button>
+  <button onclick="showMetric('todos')" id="btnTodos" style="padding: 6px 14px; font-size: 13px; border-radius: var(--border-radius-md); background: transparent; border: 0.5px solid var(--color-border-secondary); cursor: pointer;">
+    Ver Todos
+  </button>
+</div>
+
+<div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+  <div style="position: relative; width: 100%; height: 380px;">
+    <canvas id="mainChart"></canvas>
+  </div>
+</div>
+
+<div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-background-secondary); border-radius: var(--border-radius-md);">
+  <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 0.75rem;">📊 Resumen T1 2026 vs T4 2025</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+    <div style="padding: 0.75rem; background: var(--color-background-primary); border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary);">
+      <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">Instagram Seguidores</div>
+      <div style="font-size: 20px; font-weight: 500;">2.532</div>
+      <div style="font-size: 12px; color: var(--color-text-success); margin-top: 2px;">+3,3% vs T4</div>
+    </div>
+    <div style="padding: 0.75rem; background: var(--color-background-primary); border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary);">
+      <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">Facebook Seguidores</div>
+      <div style="font-size: 20px; font-weight: 500;">1.076</div>
+      <div style="font-size: 12px; color: var(--color-text-success); margin-top: 2px;">+3,3% vs T4</div>
+    </div>
+    <div style="padding: 0.75rem; background: var(--color-background-primary); border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary);">
+      <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">IG Engagement Rate</div>
+      <div style="font-size: 20px; font-weight: 500;">7,28%</div>
+      <div style="font-size: 12px; color: var(--color-text-success); margin-top: 2px;">Excepcional 🔥</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const labels = ['T1 2025', 'T2 2025', 'T3 2025', 'T4 2025', 'T1 2026'];
+
+const allData = {
+  seguidores: {
+    ig: [1767, 1869, 1947, 2452, 2532],
+    fb: [896, 937, 996, 1042, 1076]
+  },
+  visualizaciones: {
+    ig: [79679, 118009, 273385, 213711, 83032],
+    fb: [557336, 977762, 1175714, 1302870, 104255]
+  },
+  alcance: {
+    ig: [44951, 78786, 152322, 190861, 18857],
+    fb: [417158, 651054, 749252, 820148, 56771]
+  }
+};
+
+let chart;
+
+function createChart(metric) {
+  const ctx = document.getElementById('mainChart');
+  
+  if (chart) {
+    chart.destroy();
+  }
+
+  let datasets = [];
+  let yAxisConfig = {};
+
+  if (metric === 'todos') {
+    // Mostrar los tres KPIs con dos ejes Y
+    datasets = [
+      {
+        label: 'IG Seguidores',
+        data: allData.seguidores.ig,
+        borderColor: '#D85A30',
+        backgroundColor: 'rgba(216, 90, 48, 0.1)',
+        borderWidth: 2,
+        pointRadius: 4,
+        tension: 0.3,
+        yAxisID: 'y'
+      },
+      {
+        label: 'FB Seguidores',
+        data: allData.seguidores.fb,
+        borderColor: '#378ADD',
+        backgroundColor: 'rgba(55, 138, 221, 0.1)',
+        borderWidth: 2,
+        pointRadius: 4,
+        tension: 0.3,
+        yAxisID: 'y'
+      },
+      {
+        label: 'IG Visualizaciones',
+        data: allData.visualizaciones.ig,
+        borderColor: '#F09595',
+        backgroundColor: 'rgba(240, 149, 149, 0.1)',
+        borderWidth: 2,
+        pointRadius: 3,
+        tension: 0.3,
+        yAxisID: 'y1',
+        borderDash: [5, 5]
+      },
+      {
+        label: 'FB Visualizaciones',
+        data: allData.visualizaciones.fb,
+        borderColor: '#85B7EB',
+        backgroundColor: 'rgba(133, 183, 235, 0.1)',
+        borderWidth: 2,
+        pointRadius: 3,
+        tension: 0.3,
+        yAxisID: 'y1',
+        borderDash: [5, 5]
+      }
+    ];
+
+    yAxisConfig = {
+      y: {
+        type: 'linear',
+        display: true,
+        position: 'left',
+        title: {
+          display: true,
+          text: 'Seguidores',
+          font: { size: 11, weight: '500' }
+        },
+        grid: {
+          color: 'rgba(0, 0, 0, 0.05)'
+        },
+        ticks: {
+          font: { size: 11 },
+          callback: function(value) {
+            if (value >= 1000) return (value / 1000).toFixed(1) + 'K';
+            return value.toLocaleString();
+          }
+        }
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        title: {
+          display: true,
+          text: 'Visualizaciones',
+          font: { size: 11, weight: '500' }
+        },
+        grid: {
+          drawOnChartArea: false
+        },
+        ticks: {
+          font: { size: 11 },
+          callback: function(value) {
+            if (value >= 1000000) return (value / 1000000).toFixed(1) + 'M';
+            if (value >= 1000) return (value / 1000).toFixed(0) + 'K';
+            return value.toLocaleString();
+          }
+        }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 } }
+      }
+    };
+  } else {
+    // Mostrar un solo KPI
+    datasets = [
+      {
+        label: 'Instagram',
+        data: allData[metric].ig,
+        borderColor: '#D85A30',
+        backgroundColor: 'rgba(216, 90, 48, 0.1)',
+        borderWidth: 2,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Facebook',
+        data: allData[metric].fb,
+        borderColor: '#378ADD',
+        backgroundColor: 'rgba(55, 138, 221, 0.1)',
+        borderWidth: 2,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        tension: 0.3,
+        fill: true
+      }
+    ];
+
+    yAxisConfig = {
+      y: {
+        beginAtZero: true,
+        grid: {
+          color: 'rgba(0, 0, 0, 0.05)'
+        },
+        ticks: {
+          font: { size: 11 },
+          callback: function(value) {
+            if (value >= 1000000) return (value / 1000000).toFixed(1) + 'M';
+            if (value >= 1000) return (value / 1000).toFixed(0) + 'K';
+            return value.toLocaleString();
+          }
+        }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 } }
+      }
+    };
+  }
+
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        intersect: false,
+        mode: 'index'
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align: 'end',
+          labels: {
+            boxWidth: 12,
+            boxHeight: 12,
+            usePointStyle: false,
+            padding: 10,
+            font: { size: 12 }
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          padding: 12,
+          titleFont: { size: 13, weight: '500' },
+          bodyFont: { size: 12 },
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': ' + context.parsed.y.toLocaleString();
+            }
+          }
+        }
+      },
+      scales: yAxisConfig
+    }
+  });
+}
+
+function showMetric(metric) {
+  // Reset button styles
+  document.querySelectorAll('button').forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.color = 'inherit';
+    btn.style.fontWeight = '400';
+    btn.style.border = '0.5px solid var(--color-border-secondary)';
+  });
+
+  // Highlight active button
+  const activeBtn = document.getElementById('btn' + metric.charAt(0).toUpperCase() + metric.slice(1));
+  if (activeBtn) {
+    activeBtn.style.background = 'var(--color-background-info)';
+    activeBtn.style.color = 'var(--color-text-info)';
+    activeBtn.style.fontWeight = '500';
+    activeBtn.style.border = '0.5px solid var(--color-border-info)';
+  }
+
+  createChart(metric);
+}
+
+// Initialize with Seguidores
+showMetric('seguidores');
+</script>
