@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campañas Meta Ads - Cortag Europe T1 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #fafaf9;
+            padding: 2rem;
+            color: #1a1a1a;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .metrics-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .metric-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .metric-card.highlight {
+            background: #e6f1fb;
+            border-color: #378ADD;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+        
+        .metric-value {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        
+        .metric-detail {
+            font-size: 11px;
+            color: #999;
+        }
+        
+        .section-divider {
+            margin: 2rem 0;
+            border-top: 2px solid #e5e5e5;
+            padding-top: 2rem;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .campaigns-table {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 500;
+            color: #666;
+            border-bottom: 2px solid #e5e5e5;
+        }
+        
+        td {
+            padding: 12px;
+            font-size: 13px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:hover {
+            background: #fafafa;
+        }
+        
+        .campaign-name {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        .status-finalizada {
+            background: #f0f0f0;
+            color: #666;
+        }
+        
+        .status-activa {
+            background: #e6f1fb;
+            color: #378ADD;
+        }
+        
+        .status-externa {
+            background: #fff8e6;
+            color: #BA7517;
+        }
+        
+        .chart-section {
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-container {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            width: 100%;
+            height: 320px;
+        }
+        
+        .highlight-text {
+            background: #fff8e6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .notes {
+            background: #f9f9f9;
+            border-left: 3px solid #378ADD;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+        
+        .notes-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        
+        .notes-content {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Campañas Meta Ads - Cortag Europe</h1>
+        <p class="subtitle">Trimestre 1 - 2026 (Febrero - Marzo)</p>
+        
+        <!-- Resumen PRINCIPAL T1 2026 -->
+        <div class="metrics-summary">
+            <div class="metric-card highlight">
+                <div class="metric-label">Inversión T1 2026</div>
+                <div class="metric-value">~160€</div>
+                <div class="metric-detail">995 R$ (fondos T4 restantes)</div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">Visualizaciones</div>
+                <div class="metric-value">131.410</div>
+                <div class="metric-detail">Sorteo PRIME</div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">Alcance</div>
+                <div class="metric-value">58.967</div>
+                <div class="metric-detail">Cuentas únicas</div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">Clicks</div>
+                <div class="metric-value">1.970</div>
+                <div class="metric-detail">Total generados</div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">CTR</div>
+                <div class="metric-value">2,72%</div>
+                <div class="metric-detail">Click-through rate</div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-label">Leads Generados</div>
+                <div class="metric-value">~222</div>
+                <div class="metric-detail">CPR: 0,51 R$</div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="section-divider">
+            <div class="section-title">📋 Contexto T4 2025 (Referencia)</div>
+            <div class="metrics-summary">
+                <div class="metric-card">
+                    <div class="metric-label">Inversión T4</div>
+                    <div class="metric-value">~361€</div>
+                    <div class="metric-detail">2.247 R$ (2 campañas)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Visualizaciones T4</div>
+                    <div class="metric-value">196.768</div>
+                    <div class="metric-detail">SMART + PRIME</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Alcance T4</div>
+                    <div class="metric-value">83.803</div>
+                    <div class="metric-detail">Cuentas únicas</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Leads T4</div>
+                    <div class="metric-value">~58</div>
+                    <div class="metric-detail">Sistema SMART</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tabla de campañas -->
+        <div class="campaigns-table">
+            <h3 class="chart-title">Histórico y Planificación</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campaña</th>
+                        <th>Período</th>
+                        <th>Estado</th>
+                        <th>Presupuesto</th>
+                        <th>Visualizaciones</th>
+                        <th>Alcance</th>
+                        <th>Clicks</th>
+                        <th>CTR</th>
+                        <th>Leads/CPR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="opacity: 0.6;">
+                        <td class="campaign-name">Sistema Nivelación SMART</td>
+                        <td>22/09 - 31/10/25</td>
+                        <td><span class="status-badge status-finalizada">T4 2025</span></td>
+                        <td>1.252 R$ (~201€)</td>
+                        <td>65.358</td>
+                        <td>24.836</td>
+                        <td>828</td>
+                        <td>2,04%</td>
+                        <td>58 leads / 37,97 R$</td>
+                    </tr>
+                    <tr style="background: #f0f8ff;">
+                        <td class="campaign-name">Sorteo Cortadora PRIME</td>
+                        <td>02/02 - 02/03/26</td>
+                        <td><span class="status-badge status-finalizada">T1 2026</span></td>
+                        <td>995 R$ (~160€)</td>
+                        <td>131.410</td>
+                        <td>58.967</td>
+                        <td>1.970</td>
+                        <td><span class="highlight-text">2,72%</span></td>
+                        <td><span class="highlight-text">~222 leads</span> / 0,51 R$</td>
+                    </tr>
+                    <tr style="background: #fffdf5;">
+                        <td class="campaign-name">⚙️ Sistema Nivelación (Rubén Baz)</td>
+                        <td>Activa - Limitada 12/04</td>
+                        <td><span class="status-badge status-externa">Externa Brasil</span></td>
+                        <td>20 R$/día</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Gestionada por Brasil</td>
+                    </tr>
+                    <tr>
+                        <td class="campaign-name">Rubén Baz + Zapp Titan</td>
+                        <td>Principios abril 2026</td>
+                        <td><span class="status-badge status-activa">Planificada</span></td>
+                        <td>Según presupuesto restante</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Por determinar</td>
+                    </tr>
+                    <tr>
+                        <td class="campaign-name">Sorteo Cortag Expert Q2</td>
+                        <td>08/04 - 08/05/26</td>
+                        <td><span class="status-badge status-activa">Planificada</span></td>
+                        <td>~1.100-1.200 R$ (~180-195€)</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>Recuperación miembros</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Gráfico de rendimiento T1 2026 -->
+        <div class="chart-section">
+            <h3 class="chart-title">Rendimiento Campaña T1 2026 - Sorteo PRIME</h3>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notas importantes -->
+        <div class="notes">
+            <div class="notes-title">📌 Situación T1 2026 y contexto presupuestario:</div>
+            <div class="notes-content">
+                <strong>✅ Campaña ejecutada T1 2026:</strong><br>
+                Solo la campaña <strong>Sorteo Cortadora PRIME</strong> (2 febrero - 2 marzo 2026) con excelentes resultados: <strong>~222 leads generados</strong> con CTR de 2,72%, siendo <strong>la mejor campaña del año tras Sistema SMART</strong> del T4 2025.<br><br>
+                
+                <strong>💰 Situación presupuestaria:</strong><br>
+                • <strong>Enero 2026:</strong> Sin recarga de fondos por parte de Brasil<br>
+                • <strong>28 febrero 2026:</strong> Recarga de fondos habituales (trabajamos con presupuesto restante T4)<br>
+                • <strong>Desde 01/04/2026:</strong> Aumento aprobado → <strong>Europa: 2.470 R$/mes (~400€)</strong> | USA: 800 R$/mes (~130€)<br><br>
+                
+                <strong>⚙️ Campaña externa detectada:</strong><br>
+                El equipo de Cortag Brasil está ejecutando paralelamente una campaña de Sistema de Nivelación con vídeos de Rubén Baz (20 R$/día, enlace a categoría web) sin previo aviso. Esta campaña no tenía fecha de finalización. Por precaución, <strong>la hemos limitado hasta 12 de abril</strong> para evitar interferencias con nuestras dos campañas programadas y asegurar presupuesto disponible.<br><br>
+                
+                <strong>📊 Comparación entre trimestres y pérdida de leads:</strong><br>
+                Este trimestre habríamos generado un total de <strong>~644 leads</strong> (422 leads entre finales T4 2025 e inicios T1 2026 + 222 leads de la última campaña del sorteo trimestral PRIME feb-marzo 2026).<br><br>
+                Sin embargo, el <strong>17 de marzo 2026</strong> ocurrió la pérdida masiva de contactos por Brasil (de 829 a 240 miembros, -71%), por lo que todos estos leads conseguidos se han perdido y necesitan recuperación urgente.<br><br>
+                
+                <strong>🎯 Próximas campañas Q2 2026:</strong><br>
+                • <strong>Rubén Baz + Zapp Titan:</strong> Principios abril (presupuesto según restante disponible tras campaña externa)<br>
+                • <strong>Sorteo Cortag Expert:</strong> 8 abril - 8 mayo (~1.100-1.200 R$ aprox). Objetivo: recuperar miembros tras nueva pérdida de contactos
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script>
+        // Gráfico con métricas de Sorteo PRIME T1 2026
+        new Chart(document.getElementById('performanceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Sorteo PRIME T1 2026'],
+                datasets: [
+                    {
+                        label: 'Visualizaciones',
+                        data: [131410],
+                        backgroundColor: 'rgba(216, 90, 48, 0.8)',
+                        borderColor: '#D85A30',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Alcance',
+                        data: [58967],
+                        backgroundColor: 'rgba(55, 138, 221, 0.8)',
+                        borderColor: '#378ADD',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Clicks',
+                        data: [1970],
+                        backgroundColor: 'rgba(97, 196, 89, 0.8)',
+                        borderColor: '#61C459',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Leads generados',
+                        data: [222],
+                        backgroundColor: 'rgba(240, 149, 149, 0.8)',
+                        borderColor: '#F09595',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        align: 'end',
+                        labels: {
+                            boxWidth: 12,
+                            padding: 10,
+                            font: { size: 12 }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: { size: 11 },
+                            callback: function(value) {
+                                if (value >= 1000) return (value / 1000).toFixed(0) + 'K';
+                                return value.toLocaleString();
+                            }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 11 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
